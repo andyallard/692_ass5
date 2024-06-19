@@ -1,0 +1,14 @@
+html {
+    background-color: #023047;
+    color: #fb8500;
+}
+
+table, tr, th, td {
+    border: 1px solid #219ebc;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    max-width: 400px;
+}

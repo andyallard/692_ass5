@@ -81,7 +81,8 @@ def book_data():
         prices.append(float(book.find('p', class_="price_color").text[1:]))
 
     # Create a DataFrame using the two lists
-    book_data = pd.DataFrame(list(zip(titles, prices)), columns=['Titles','Prices'])    
+    book_data = pd.DataFrame(list(zip(titles, prices)), columns=['Titles','Prices'])
+    book_data['Sale Prices'] = round(book_data['Prices'] * 0.75, 2)
     print(book_data)        # Print to the terminal as confirmation - only we can see this
 
     # Format and print the DataFrame using the html template provided in the templates subdirectory
@@ -94,8 +95,8 @@ def learn():
     s += '<html style=" background-color: #333; color: #64d;">'
     s += '<div style="width: 300;"><h3>What did I learn?</h3>'
     s += "<p>I learned a lot about how to use pandas. I had played with it before"
-    s += " but I never really fully understood it. I can't say I really understand"
-    s += " it yet, but progress has been made.</p></div></html>"
+    s += " but I never really fully understood it. I can't say I fully understand"
+    s += " it yet, but a lot of progress has been made.</p></div></html>"
     return s
 
 
